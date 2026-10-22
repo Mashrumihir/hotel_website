@@ -1,0 +1,552 @@
+/* =========================================================
+   HOTELEASE - PREMIUM HOUSEKEEPING MANAGEMENT STYLESHEET
+   Matching Luxury Midnight Navy Dashboard Layout
+   ========================================================= */
+
+:root {
+    --hk-bg: #071322;
+    --hk-card-bg: #0E1F35;
+    --hk-card-border: #1B314B;
+    --hk-card-hover: #142B47;
+    --hk-text-white: #FFFFFF;
+    --hk-text-muted: #94A3B8;
+    --hk-blue: #2563EB;
+    --hk-blue-light: rgba(37, 99, 235, 0.15);
+    --hk-red: #EF4444;
+    --hk-red-light: rgba(239, 68, 68, 0.15);
+    --hk-green: #10B981;
+    --hk-green-light: rgba(16, 185, 129, 0.15);
+    --hk-purple: #8B5CF6;
+    --hk-purple-light: rgba(139, 92, 246, 0.15);
+    --hk-amber: #F59E0B;
+    --hk-amber-light: rgba(245, 158, 11, 0.15);
+    --hk-gray: #64748B;
+}
+
+body {
+    background-color: var(--hk-bg) !important;
+    color: var(--hk-text-white);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.housekeeping-container {
+    background-color: var(--hk-bg);
+    min-height: 100vh;
+    padding-bottom: 3rem;
+}
+
+/* OVERRIDE TOP NAVBAR FOR LUXURY DARK NAVY THEME */
+.top-sticky-navbar {
+    background: #0B1D33 !important;
+    border-bottom: 1px solid #1B314B !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
+}
+
+.top-sticky-navbar h5,
+.top-sticky-navbar .text-navy {
+    color: #FFFFFF !important;
+}
+
+.top-sticky-navbar .admin-nav-pill,
+.top-sticky-navbar #adminProfileDropdownBtn {
+    background-color: #0E1F35 !important;
+    border-color: #1B314B !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+}
+
+.top-sticky-navbar #adminProfileDropdownBtn span {
+    color: #FFFFFF !important;
+}
+
+.top-sticky-navbar #adminProfileDropdownBtn .text-muted {
+    color: #94A3B8 !important;
+}
+
+.top-sticky-navbar #adminProfileDropdownBtn:hover,
+.top-sticky-navbar #adminProfileDropdownBtn[aria-expanded="true"] {
+    background-color: #142C4B !important;
+    border-color: #2563EB !important;
+}
+
+/* Dark Theme Admin Dropdown Menu */
+.topbar-nav-dropdown,
+.admin-dropdown-menu {
+    background: #0E1F35 !important;
+    border: 1px solid #1B314B !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.admin-dropdown-header-link {
+    background: #0B1D33 !important;
+}
+
+.admin-dropdown-header-link h6 {
+    color: #FFFFFF !important;
+}
+
+.admin-dropdown-menu .dropdown-item,
+.topbar-nav-dropdown .dropdown-item {
+    color: #E2E8F0 !important;
+}
+
+.admin-dropdown-menu .dropdown-item:hover,
+.topbar-nav-dropdown .dropdown-item:hover {
+    background-color: #142C4B !important;
+    color: #60A5FA !important;
+}
+
+.dropdown-divider {
+    border-top-color: #1B314B !important;
+}
+
+/* Header Section */
+.hk-header-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--hk-text-white);
+    letter-spacing: -0.5px;
+}
+
+.hk-header-subtitle {
+    color: var(--hk-text-muted);
+    font-size: 0.9rem;
+}
+
+/* KPI Summary Cards Grid */
+.hk-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.hk-kpi-card {
+    background: var(--hk-card-bg);
+    border: 1px solid var(--hk-card-border);
+    border-radius: 14px;
+    padding: 1.15rem 1rem;
+    text-align: center;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.hk-kpi-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(37, 99, 235, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.hk-kpi-number {
+    font-size: 1.85rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 0.25rem;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.hk-kpi-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--hk-text-muted);
+    text-transform: capitalize;
+}
+
+.hk-kpi-dirty .hk-kpi-number { color: #F87171; }
+.hk-kpi-cleaning .hk-kpi-number { color: #60A5FA; }
+.hk-kpi-clean .hk-kpi-number { color: #34D399; }
+.hk-kpi-inspected .hk-kpi-number { color: #C084FC; }
+.hk-kpi-maintenance .hk-kpi-number { color: #9CA3AF; }
+
+/* Filter Pill Bar */
+.hk-filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.75rem;
+    flex-wrap: wrap;
+}
+
+.hk-filter-pill {
+    background: #0B1D33;
+    border: 1px solid var(--hk-card-border);
+    color: var(--hk-text-muted);
+    padding: 0.45rem 1.1rem;
+    border-radius: 50rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.hk-filter-pill:hover {
+    background: #142C4B;
+    color: #FFFFFF;
+    border-color: rgba(37, 99, 235, 0.35);
+}
+
+.hk-filter-pill.active {
+    background: #2563EB !important;
+    border-color: #3B82F6 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+}
+
+/* Housekeeping Cards Grid Layout */
+.hk-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+/* Housekeeping Room Task Card */
+.hk-card {
+    background: var(--hk-card-bg);
+    border: 1px solid var(--hk-card-border);
+    border-radius: 16px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    position: relative;
+    height: 100%;
+}
+
+.hk-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(37, 99, 235, 0.45);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Header */
+.hk-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+}
+
+.hk-room-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--hk-text-white);
+    margin: 0;
+}
+
+.hk-room-subtitle {
+    font-size: 0.8rem;
+    color: var(--hk-text-muted);
+    font-weight: 500;
+    margin-bottom: 0.85rem;
+}
+
+/* Status & Priority Badges */
+.hk-badge {
+    padding: 0.28rem 0.7rem;
+    border-radius: 50rem;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.hk-badge-clickable {
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.hk-badge-clickable:hover {
+    filter: brightness(1.25);
+    transform: scale(1.06);
+}
+
+/* Status Badge Styles */
+.hk-badge-status-cleaning {
+    background: rgba(37, 99, 235, 0.18);
+    color: #60A5FA;
+    border: 1px solid rgba(96, 165, 250, 0.4);
+}
+.hk-badge-status-dirty {
+    background: rgba(239, 68, 68, 0.18);
+    color: #F87171;
+    border: 1px solid rgba(248, 113, 113, 0.4);
+}
+.hk-badge-status-clean {
+    background: rgba(16, 185, 129, 0.18);
+    color: #34D399;
+    border: 1px solid rgba(52, 211, 153, 0.4);
+}
+.hk-badge-status-inspected {
+    background: rgba(139, 92, 246, 0.18);
+    color: #C084FC;
+    border: 1px solid rgba(192, 132, 252, 0.4);
+}
+.hk-badge-status-maintenance {
+    background: rgba(107, 114, 128, 0.18);
+    color: #9CA3AF;
+    border: 1px solid rgba(156, 163, 175, 0.4);
+}
+
+/* Priority Badge Styles */
+.hk-badge-priority-high {
+    background: rgba(245, 158, 11, 0.18);
+    color: #FBBF24;
+    border: 1px solid rgba(251, 191, 36, 0.4);
+}
+.hk-badge-priority-urgent {
+    background: rgba(239, 68, 68, 0.22);
+    color: #F87171;
+    border: 1px solid rgba(248, 113, 113, 0.5);
+}
+.hk-badge-priority-medium {
+    background: rgba(37, 99, 235, 0.18);
+    color: #93C5FD;
+    border: 1px solid rgba(147, 197, 253, 0.35);
+}
+.hk-badge-priority-low {
+    background: rgba(100, 116, 139, 0.18);
+    color: #CBD5E1;
+    border: 1px solid rgba(203, 213, 225, 0.35);
+}
+
+/* Delete Button on Card */
+.hk-btn-delete {
+    background: transparent;
+    border: none;
+    color: #64748B;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.45rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hk-btn-delete:hover {
+    color: #EF4444;
+    background: rgba(239, 68, 68, 0.18);
+    transform: scale(1.12);
+}
+
+/* Details List */
+.hk-details {
+    font-size: 0.8125rem;
+    color: var(--hk-text-muted);
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.hk-details-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.hk-details-row i {
+    width: 14px;
+    font-size: 0.8rem;
+    color: var(--hk-text-muted);
+}
+
+.hk-details-row strong {
+    color: #E2E8F0;
+}
+
+.hk-notes {
+    font-size: 0.78rem;
+    color: #94A3B8;
+    margin-top: 0.2rem;
+    line-height: 1.4;
+}
+
+/* Progress Section */
+.hk-progress-wrapper {
+    margin-bottom: 1.15rem;
+}
+
+.hk-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: var(--hk-text-muted);
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.hk-progress-bar-bg {
+    width: 100%;
+    height: 7px;
+    background: #0B192A;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.hk-progress-bar-fill {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.45s ease, background 0.45s ease;
+}
+
+.hk-fill-cleaning { background: linear-gradient(90deg, #2563EB, #60A5FA); }
+.hk-fill-dirty { background: #334155; }
+.hk-fill-clean { background: linear-gradient(90deg, #059669, #34D399); }
+.hk-fill-inspected { background: linear-gradient(90deg, #7C3AED, #C084FC); }
+.hk-fill-maintenance { background: #64748B; }
+
+/* Action Buttons */
+.hk-btn-action {
+    width: 100%;
+    border-radius: 12px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    padding: 0.65rem 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.btn-start-cleaning {
+    background: #2563EB;
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+.btn-start-cleaning:hover {
+    background: #1D4ED8;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.5);
+    transform: translateY(-1px);
+}
+
+.btn-mark-clean {
+    background: #10B981;
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+}
+.btn-mark-clean:hover {
+    background: #059669;
+    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.5);
+    transform: translateY(-1px);
+}
+
+.btn-inspected {
+    background: #8B5CF6;
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(139, 92, 246, 0.35);
+}
+.btn-inspected:hover {
+    background: #7C3AED;
+    box-shadow: 0 6px 18px rgba(139, 92, 246, 0.5);
+    transform: translateY(-1px);
+}
+
+.btn-room-ready {
+    background: #0B2520;
+    color: #34D399;
+    border: 1px solid #059669;
+}
+.btn-room-ready:hover {
+    background: #064E3B;
+    color: #6EE7B7;
+    transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes cardEntering {
+    from {
+        opacity: 0;
+        transform: translateY(-18px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.card-entering {
+    animation: cardEntering 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cardDeleting {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        max-height: 400px;
+    }
+    50% {
+        opacity: 0.4;
+        transform: scale(0.9);
+        max-height: 400px;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+        max-height: 0;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.card-deleting {
+    animation: cardDeleting 0.4s ease-in-out forwards;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+@keyframes hkBadgePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.22); }
+    100% { transform: scale(1); }
+}
+
+.hk-pulse {
+    animation: hkBadgePulse 0.35s ease-in-out;
+}
+
+@keyframes kpiNumberBounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.28); color: #60A5FA; }
+    100% { transform: scale(1); }
+}
+
+.kpi-bump {
+    animation: kpiNumberBounce 0.35s ease-in-out;
+}
+
+/* Empty State */
+.hk-empty-state {
+    grid-column: 1 / -1;
+    background: var(--hk-card-bg);
+    border: 1px solid var(--hk-card-border);
+    border-radius: 16px;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    color: var(--hk-text-muted);
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 1200px) {
+    .hk-grid { grid-template-columns: repeat(2, 1fr); }
+    .hk-kpi-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .hk-grid { grid-template-columns: 1fr; }
+    .hk-kpi-grid { grid-template-columns: repeat(2, 1fr); }
+}
